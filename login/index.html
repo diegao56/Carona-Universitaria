@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/codigo/login/style.css" />
+    <script type="text/javascript" src="/codigo/login/script.js"></script>
+    <script type="text/javascript" src="/codigo/cadastro/js/dados.js"></script>
+    <title>Pagina de Login</title>
+  </head>
+
+  <header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <img
+          src="/codigo/login/img/logo2.png"
+          alt="logo"
+        />
+        <a class="navbar-brand" href="/codigo/tela principal/index.html">Pagina inicial</a>
+      </div>
+    </nav>
+  </header>
+  <body id="LoginForm">
+    <div class="container">
+      <div class="login-form">
+        <div class="main-div col-6">
+          <div class="panel">
+            <!-- <div id="msgError"></div>
+            <div id="msgSuccess"></div> -->
+            <h1><strong>FAZER LOGIN</strong></h1>
+            <p>Por favor entre com seu e-mail e senha</p>
+          </div>
+          <form id="Login">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="E-mail"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="inputPassword"
+                placeholder="Senha"
+                required
+              />
+            </div>
+
+            <div class="forgot">
+              <a href="">Esqueceu a senha?</a>
+            </div>
+
+            <button
+              onclick="logar()"
+              type="button"
+              id="btn"
+              class="btn btn-primary"
+            >
+              Entrar
+            </button>
+          </form>
+
+          <div class="cadastro">
+            <p>
+              <strong>Primeira vez aqui?</strong>
+              <a href="/codigo/cadastro/cadastro.html"><strong>CADASTRE-SE</strong></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = function verificarSenha() {
+        var senha = document.getElementById("inputPassword");
+        senha.addEventListener("keyup", () => {
+          if (senha.value.length <= 2) {
+            senha.setAttribute("style", "border-color: red");
+            validSenha = false;
+            msgError.setAttribute("style", "display: block");
+            msgSuccess.innerHTML = "";
+            msgSuccess.setAttribute("style", "display: none");
+          } else {
+            senha.setAttribute("style", "border-color: green");
+            validSenha = true;
+          }
+        });
+      };
+    </script>
+  </body>
+  <footer>
+    <div class="rod">
+      <h5>
+        Copyright 2022 - Carona Universitaria - <strong>PUC Minas</strong>
+      </h5>
+    </div>
+  </footer>
+</html>
